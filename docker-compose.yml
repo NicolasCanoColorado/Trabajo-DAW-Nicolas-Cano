@@ -1,0 +1,55 @@
+version: "3.9"
+
+services:
+
+  cliente:
+    build: ./cliente
+    container_name: cliente
+    networks:
+      - red1
+    tty: true
+
+  servidor_dns:
+    build: ./dns
+    container_name: servidor_dns
+    networks:
+      - red1
+    tty: true
+
+  servidor_dhcp:
+    build: ./dhcp
+    container_name: servidor_dhcp
+    networks:
+      - red1
+    tty: true
+
+  servidor_web:
+    build: ./servidorweb
+    container_name: servidor_web
+    ports:
+      - "80:80"
+    networks:
+      - red1
+    tty: true
+
+  cliente2:
+    build: ./cliente
+    container_name: cliente2
+    networks:
+      - red2
+    tty: true
+
+  servidorNginx:
+    image: servidornginx90
+    container_name: servidorNginx
+    ports:
+      - "90:90"
+    networks:
+      - red2
+    tty: true
+
+networks:
+  red1:
+    driver: bridge
+  red2:
+    driver: bridge
