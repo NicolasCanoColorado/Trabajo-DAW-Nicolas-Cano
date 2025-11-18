@@ -1,0 +1,24 @@
+//Primero cargar la imagen personalizada para el servidor seguro con:
+
+docker load -i nombre_imagen.tar
+
+//Componer todo. Tiene que ser desde la ruta de la carpeta del .yml, con:
+
+docker compose up -d
+
+--------------------------------------------------------------------------------------
+
+//Es posible que servidorNginx este apagado. Para encenderlo primero entra al contenedor con:
+
+docker exec -it servidorNginx bash
+
+//Y enciende con:
+
+nginx
+
+--------------------------------------------------------------------------------------
+
+No se pudo subir el .tar con la imagen faltante a GitHub. Se compartira por OneDrive a cualquiera que tenga correo de educacyl. Se accede con el siguiente link:
+
+https://educajcyl-my.sharepoint.com/:u:/g/personal/nicolas_cancol_educa_jcyl_es/EbiForH3aSNOmZM7ZrD2UAMBpMAGYOANhkhJvCP_NIw_xQ?e=e0xG7h
+
